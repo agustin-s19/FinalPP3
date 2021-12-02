@@ -22,12 +22,11 @@ router.post("/addProduct", async (req, res) => {
     try{
         const savedProduct = await newProduct.save();
         res.status(200).json(savedProduct);
-        console.log(newProduct)
-        console.log(savedProduct)
+        console.log(newProduct);
+        console.log(savedProduct);
     }catch(err){
         res.status(500).json(err);
-        console.log(newProduct)
-        console.log(savedProduct)
+        
     }
 })
 

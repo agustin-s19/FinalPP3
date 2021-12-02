@@ -73,6 +73,7 @@ const Capsula = styled.div`
     margin: 20px 0px 0px 40px;
 
 `
+
 const CreateProduct = () => {
 
     const [title, setTitle] = useState('');
@@ -81,7 +82,7 @@ const CreateProduct = () => {
     const [categories, setCategory] = useState('');
     const [color, setColor] = useState('');
     const [price, setPrice] = useState('');
-    const [inStock, setStock] = useState('');
+    const [inStock, setStock] = useState(false);
 
     async function addProduct(event) {
 		event.preventDefault()
@@ -125,8 +126,6 @@ const CreateProduct = () => {
         <Container>
             <NavbarAdmin/>
             <Wrapper>
-            
-
            
            
                 <Input
@@ -167,6 +166,7 @@ const CreateProduct = () => {
                     onChange={(e) => setPrice(e.target.value)}
                     type="number"
                 />
+
                 <Capsula>
                     <Title>Stock:</Title>
                     <select value={inStock} onChange={(e) => setStock(e.target.value)}>
@@ -174,9 +174,10 @@ const CreateProduct = () => {
                         <option value="false">No</option>
                     </select>
                 </Capsula>
+            
           
             <Button type="submit" onClick={addProduct}>CREAR PRODUCTO</Button>
-          
+           
             </Wrapper>
         </Container>
      
